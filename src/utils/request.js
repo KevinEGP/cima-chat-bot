@@ -4,7 +4,7 @@ import sessionService from "../services/sessionService.js";
 async function whatsappRequest(to, body) {
 	const whatsappToken = process.env.WHATSAPP_TOKEN;
 	const phoneId = process.env.PHONE_NUMBER_ID;
-	axios.post(
+	return axios.post(
 		`https://graph.facebook.com/v21.0/${phoneId}/messages`,
 		body,
 		{ headers: {

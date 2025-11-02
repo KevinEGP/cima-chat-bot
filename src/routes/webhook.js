@@ -31,7 +31,6 @@ router.post("/", async (req, res) => {
   const text = message.text?.body?.trim();
   
   const session = sessionService.getSession(from);
-  logger.info(`Session for ${from}: ${JSON.stringify(session)}`);
   logger.info(`Text ${JSON.stringify(message)}`);
   switch (session?.step) {
     case "MAIN_MENU":
